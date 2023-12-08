@@ -1,6 +1,7 @@
 import { ShopLayout } from "@/components/layouts";
 import { Grid, Box, Typography, Button, Chip } from "@mui/material";
 import { initialData } from "@/database/products";
+import { SlideShow } from "@/components/ui";
 
 const product = initialData.products[0];
 
@@ -14,7 +15,7 @@ const slug = () => {
         >
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={7}>
-                    {/*SideShow*/}
+                    <SlideShow images={product.images} />
                 </Grid>
                 <Grid item xs={12} sm={5}>
                     <Box display='flex' flexDirection='column' >
