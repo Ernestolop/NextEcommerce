@@ -16,11 +16,11 @@ const CartList = ({ editable = false }) => {
                 productsInCart.map(product => (
                     <Grid container spacing={2} key={product.slug} sx={{ mb: 1 }}>
                         <Grid item xs={3}>
-                            <Link href='products/slug' prefetch={false}>
+                            <Link href='/products/slug' prefetch={false}>
                                 <CardActionArea>
                                     <CardMedia
                                         component='img'
-                                        image={`products/${product.images[0]}`}
+                                        image={`/products/${product.images[0]}`}
                                         alt={product.title}
                                         sx={{ borderRadius: '5px' }}
                                     />
