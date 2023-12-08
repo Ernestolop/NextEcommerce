@@ -9,7 +9,7 @@ const productsInCart = [
     initialData.products[2]
 ];
 
-const CartList = () => {
+const CartList = ({ editable = false }) => {
     return (
         <>
             {
@@ -31,14 +31,18 @@ const CartList = () => {
                             <Box diplay='flex' flexDirection='column'>
                                 <Typography variant="body1"> {product.title} </Typography>
                                 <Typography variant="body1">Talla: <strong>M</strong></Typography>
-                                {/* Condicional */}
-                                <ItemCounter />
+                                {
+                                    editable ? <ItemCounter /> : <Typography variant="body1">Cantidad: <strong>1</strong></Typography>
+                                }
                             </Box>
                         </Grid>
                         <Grid item xs={2} display='flex' alignItems='center' flexDirection='column'>
                             <Typography>${product.price}</Typography>
-                            {/*Editable*/}
-                            <Button variant='text' color='secondary'>Remover</Button>
+                            {
+                                editable && (
+                                    <Button variant='text' color='secondary'>Remover</Button>
+                                )
+                            }
                         </Grid>
                     </Grid>
                 ))
