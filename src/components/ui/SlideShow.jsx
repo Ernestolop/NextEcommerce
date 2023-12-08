@@ -18,7 +18,6 @@ const SlideShow = ({ images }) => {
         >
             {
                 images.map(image => {
-                    //backticks: ``
                     const url = `/products/${image}`;
                     return (
                         <div className='??' key={image}>
