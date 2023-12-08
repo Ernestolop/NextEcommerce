@@ -1,16 +1,31 @@
 import Link from "next/link";
-import { Typography, Grid, Card, CardContent, Divider, Box, Button } from "@mui/material";
+import { Typography, Grid, Card, CardContent, Divider, Box, Button, Chip } from "@mui/material";
 import { ShopLayout } from "@/components/layouts";
 import { CartList, OrderSummary } from "@/components/cart";
+import { CreditCardOffOutlined, CreditCardOutlined } from "@mui/icons-material";
 
-const Summary = () => {
+const OrderPage = () => {
     return (
         <ShopLayout
-            title='Orden'
-            description='Resumen de orden'
+            title='Orden 12312'
+            description='Resumen de la orden 12305'
             kw='orden'
         >
-            <Typography variant="h1" component="h1">Resumen</Typography>
+            <Typography variant="h1" component="h1">Ordern :123</Typography>
+            <Chip
+                sx={{ my: 2 }}
+                label="Pendiente de Pago"
+                variant="outlined"
+                color="error"
+                icon={<CreditCardOffOutlined />}
+            />
+            <Chip
+                sx={{ my: 2 }}
+                label="Pagada"
+                variant="outlined"
+                color="success"
+                icon={<CreditCardOutlined />}
+            />
             <Grid container>
                 <Grid item xs={12} sm={7}>
                     <CartList />
@@ -41,7 +56,14 @@ const Summary = () => {
                             </Box>
                             <OrderSummary />
                             <Box sx={{ mt: 3 }}>
-                                <Button color='secondary' className='circular-btn' fullWidth>Confirmar Orden</Button>
+                                <h1>Pagar</h1>
+                                <Chip
+                                    sx={{ my: 2 }}
+                                    label="Pagada"
+                                    variant="outlined"
+                                    color="success"
+                                    icon={<CreditCardOutlined />}
+                                />
                             </Box>
                         </CardContent>
                     </Card>
@@ -51,4 +73,4 @@ const Summary = () => {
     )
 }
 
-export default Summary;
+export default OrderPage;
